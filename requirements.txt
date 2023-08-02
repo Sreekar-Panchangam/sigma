@@ -1,5 +1,7 @@
 django==4.2.4
-django-restframework==0.0.1
+django-bootstrap4==23.2
+djangorestframework==3.14.0
+mysqlclient==2.2.0
 pillow==10.0.0
 pip==23.2.1
 python==3.11.4
