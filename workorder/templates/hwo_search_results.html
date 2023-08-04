@@ -11,10 +11,8 @@
     <h1 class="h1-class-design">The following work orders match your search query:</h1>
     <div class="container">
     {% for order in hwos %}
-        <h5 class="result-list-class-design">Work Order {{ order.Work_Order_Number }}</h5>
+        <h5 class="result-list-class-design"><a href="{% url 'workorder:hwo_detail' order.Work_Order_Number %}">Work Order {{ order.Work_Order_Number }}</a></h5>
     {% endfor %}
     </div>
 </div>
 {% endblock content %}
-    
-

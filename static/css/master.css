@@ -130,7 +130,7 @@ input[type="date"] {
     display: inline-flex;
     padding: 10px 25px;
     margin-top: 18px;
-    margin-bottom: 18px;
+    margin-bottom: 50px;
     justify-content: center;
     align-items: center;
     gap: 10px;
@@ -147,4 +147,67 @@ input[type="date"] {
     line-height: normal;
     margin-left: 30px;
     margin-top: 15px;
+}
+
+.centered-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%; /* Ensure the cell height is fully occupied by the content */
+  }
+
+.table-h1-text-design{
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 30px;
+    font-weight: 900;
+}
+
+.table-h2-text-design{
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.table-h3-text-design{
+    color: #000;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.cell-border-all{
+    border: 1.5px solid black;
+}
+
+.cell-border-no-bottom{
+    border-top: 1.5px solid black;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+}
+
+.cell-border-no-top{
+    border-bottom: 1.5px solid black;
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+}
+
+.cell-border-sides-only{
+    border-left: 1.5px solid black;
+    border-right: 1.5px solid black;
+}
+
+.centre-table{
+    display: flex;
+    justify-content: center;
+}
+
+.centre-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
 }
