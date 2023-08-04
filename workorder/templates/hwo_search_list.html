@@ -1,0 +1,50 @@
+{% extends "base.html" %}
+{% block title %}
+    Hoist W.O - Search
+{% endblock title %}
+{% block content %}
+    <div class="container">
+        <h1 class="h1-class-design">Search any Hoist Work Order based on:</h1>
+        <div class="container">
+        <form method="POST" class="">
+            {% csrf_token %}
+            <div class="form-group">
+                <label class="label-class-design" for="workOrderNumber">Work Order Number:</label>
+                <input type="number" id="workOrderNumber" name="wonumber" class="form-control" placeholder="Work Order Number">
+            </div>
+
+            <div class="form-group">
+                <label class="label-class-design" for="companyName">Company Name:</label>
+                <input type="text" id="companyName" name="company" class="form-control" placeholder="Company Name">
+            </div>
+
+            <div class="form-group">
+                <label class="label-class-design" for="city">City:</label>
+                <input type="text" id="city" name="city" class="form-control" placeholder="City">
+            </div>
+
+            <div class="form-group">
+                <label class="label-class-design" for="capacity">Capacity:</label>
+                <input type="text" id="capacity" name="capacity" class="form-control" placeholder="Capacity">
+            </div>
+
+            <div class="form-group">
+                <label class="label-class-design" for="salesRepresentative">Sales Representative:</label>
+                <input type="text" id="salesRepresentative" name="sales_rep" class="form-control" placeholder="Sales Representative">
+            </div>
+
+            <div class="form-group">
+                <label class="label-class-design" for="startDate">Start Date:</label>
+                <input type="date" id="startDate" name="start_date" class="form-control" placeholder="Start Date">
+            </div>
+
+            <div class="form-group">
+                <label class="label-class-design" for="endDate">End Date:</label>
+                <input type="date" id="endDate" name="end_date" class="form-control" placeholder="End Date">
+            </div>
+
+            <input type="submit" value="Search" class="btn btn-primary button-class-design">
+        </form>
+        </div>
+    </div>
+{% endblock content %}
