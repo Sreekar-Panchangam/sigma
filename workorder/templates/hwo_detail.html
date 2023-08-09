@@ -4,7 +4,7 @@
 {% endblock title %}
 {% block content %}
 <div class="container">
-    <h1 class="h1-class-design">Detail Page</h1>
+    <h1 class="h1-class-design">Detail Page</h1><br>
     <div class="centre-table">
     <table border="5">
             <tr>
@@ -21,15 +21,15 @@
               <td rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10" class="cell-border-all"><b>Customer Information</b></td>
+              <td rowspan="1" colspan="10" class="cell-border-all">&nbsp;<b>Customer Information</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="7" class="cell-border-no-bottom"><b>{{ hwo.customer }}</b></td>
+              <td rowspan="1" colspan="7" class="cell-border-no-bottom">&nbsp;<b>{{ hwo.customer }}</b></td>
               <td rowspan="2" colspan="1" class="centered-cell cell-border-no-bottom">P.O No.</td>
               <td rowspan="2" colspan="2" class="centered-cell cell-border-no-bottom">{{ hwo.P_O_Number }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="7">{{ hwo.customer.address }}</td>
+              <td rowspan="1" colspan="7">&nbsp;{{ hwo.customer.address }}</td>
             </tr>
             <tr>
               <td rowspan="1" colspan="7"></td>
@@ -74,98 +74,98 @@
               <td rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10" class="cell-border-no-bottom"><b>General Specification</b></td>
+              <td rowspan="1" colspan="10" class="cell-border-no-bottom">&nbsp;<b>General Specification</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Capacity</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Capacity</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.capacity }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Kg</td>
               <td rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td rowspan="1" colspan="2" class="cell-border-all">Hoist Code</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoist Code</td>
               <td rowspan="1" colspan="3" class="centered-cell cell-border-all">{{ hwo.hoist_code }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Height of Lift</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Height of Lift</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.height }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Mts</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">Trolley Type</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Trolley Type</td>
               <td rowspan="1" colspan="3" class="centered-cell cell-border-all">{{ hwo.trolley_type }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Fall</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Fall</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.fall }}</td>
               <td rowspan="1" colspan="1" class="cell-border-all"></td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all cell-border-all">Additional Feature</td>
+              <td rowspan="1" colspan="2" class="cell-border-all cell-border-all">&nbsp;Additional Feature</td>
               <td rowspan="1" colspan="3" class="centered-cell cell-border-all">{{ hwo.additional_feature }}</td>
             </tr>
             <tr>
               <td rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10" class="cell-border-no-bottom"><b>Technical Specification</b></td>
+              <td rowspan="1" colspan="10" class="cell-border-no-bottom">&nbsp;<b>Technical Specification</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Hoisting Speed</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoisting Speed</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.hoist_speed }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mpm</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Wheel</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Wheel</td>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ hwo.C_T_wheel }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.tread }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Hoist Motor</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoist Motor</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.hoist_motor }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">HP</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Wheel Type</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Wheel Type</td>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ hwo.C_T_wheel_type }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.C_T_wheel_type_2 }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Hoist Motor RPM</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoist Motor RPM</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.hoist_motor_rpm }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">rpm</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Speed</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Speed</td>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ hwo.C_T_speed }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mpm</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Hoist Brake</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoist Brake</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.hoist_brake }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.hoist_brake_type }}</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Gear Box</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Gear Box</td>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ hwo.C_T_gear_box }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Std</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Rope Drum Code</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Rope Drum Code</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.rope_drum_code }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.rope_reeving }}</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Motor</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Motor</td>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ hwo.C_T_motor }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">HP</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Wire Rope</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Wire Rope</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.wire_rope }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Motor RPM</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Motor RPM</td>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ hwo.C_T_motor_rpm }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">rpm</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Wire Length</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Wire Length</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.wire_length }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mts</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Brake</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Brake</td>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ hwo.C_T_brake }}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ hwo.C_T_brake_type }}</td>
             </tr>
@@ -173,39 +173,39 @@
               <td rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10" class="cell-border-no-bottom"><b>Special Requirements</b></td>
+              <td rowspan="1" colspan="10" class="cell-border-no-bottom">&nbsp;<b>Special Requirements</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4" class="cell-border-all">Limit Switch</td>
+              <td rowspan="1" colspan="4" class="cell-border-all">&nbsp;Limit Switch</td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="5" class="cell-border-all">Creep Speed</td>
+              <td rowspan="1" colspan="5" class="cell-border-all">&nbsp;Creep Speed</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">Gravity Type</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Gravity Type</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{% if hwo.gravity_type %}{{ hwo.gravity_type }}{% endif %}</td>
               <td rowspan="1" colspan="1" class="cell-border-all"></td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">Hoist Creep</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoist Creep</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{% if hwo.hoist_creep %}{{ hwo.hoist_creep }}{% endif %}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Limit Switch</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Limit Switch</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{% if hwo.C_T_limit_switch %}{{ hwo.C_T_limit_switch }}{% endif %}</td>
               <td rowspan="1" colspan="1" class="cell-border-all"></td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">C T Creep</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Creep</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{% if hwo.C_T_creep %}{{ hwo.C_T_creep }}{% endif %}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all"></td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all"></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="cell-border-all">L T Limit Switch</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;L T Limit Switch</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{% if hwo.L_T_limit_switch %}{{ hwo.L_T_limit_switch }}{% endif %}</td>
               <td rowspan="1" colspan="1" class="cell-border-all"></td>
               <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="cell-border-all">L T Creep</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;L T Creep</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{% if hwo.L_T_creep %}{{ hwo.L_T_creep }}{% endif %}</td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all"></td>
               <td rowspan="1" colspan="1" class="centered-cell cell-border-all"></td>
@@ -214,7 +214,7 @@
               <td rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10" class="cell-border-no-bottom"><b>Additional Information</b></td>
+              <td rowspan="1" colspan="10" class="cell-border-no-bottom">&nbsp;<b>Additional Information</b></td>
             </tr>
             <tr>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all">Flange Width</td>
@@ -228,32 +228,27 @@
               <td rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10" class="cell-border-no-bottom"><b>Notes:</b></td>
+              <td rowspan="1" colspan="10" class="cell-border-no-bottom">&nbsp;<b>Notes:</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4" class="cell-border-no-bottom">{{ hwo.notes_1 }}</td>
+              <td rowspan="1" colspan="4" class="cell-border-no-bottom">{% if hwo.notes_1 %}&nbsp;1. {{ hwo.notes_1 }}{% endif %}</td>
               <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5" class="cell-border-no-bottom">{{ hwo.notes_6 }}</td>
+              <td rowspan="1" colspan="5" class="cell-border-no-bottom">{% if hwo.notes_5 %}&nbsp;5. {{ hwo.notes_5 }}{% endif %}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4" class="cell-border-sides-only">{{ hwo.notes_2 }}</td>
+              <td rowspan="1" colspan="4" class="cell-border-sides-only">{% if hwo.notes_2 %}&nbsp;2. {{ hwo.notes_2 }}{% endif %}</td>
               <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5" class="cell-border-sides-only">{{ hwo.notes_7 }}</td>
+              <td rowspan="1" colspan="5" class="cell-border-sides-only">{% if hwo.notes_6 %}&nbsp;6. {{ hwo.notes_6 }}{% endif %}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4" class="cell-border-sides-only">{{ hwo.notes_3 }}</td>
+              <td rowspan="1" colspan="4" class="cell-border-sides-only">{% if hwo.notes_3 %}&nbsp;3. {{ hwo.notes_3 }}{% endif %}</td>
               <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5" class="cell-border-sides-only">{{ hwo.notes_8 }}</td>
+              <td rowspan="1" colspan="5" class="cell-border-sides-only">{% if hwo.notes_7 %}&nbsp;7. {{ hwo.notes_7 }}{% endif %}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4" class="cell-border-sides-only">{{ hwo.notes_4 }}</td>
+              <td rowspan="1" colspan="4" class="cell-border-no-top">{% if hwo.notes_4 %}&nbsp;4. {{ hwo.notes_4 }}{% endif %}</td>
               <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5" class="cell-border-sides-only">{{ hwo.notes_9 }}</td>
-            </tr>
-            <tr>
-              <td rowspan="1" colspan="4" class="cell-border-no-top">{{ hwo.notes_5 }}</td>
-              <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5" class="cell-border-no-top">{{ hwo.notes_10 }}</td>
+              <td rowspan="1" colspan="5" class="cell-border-no-top">{% if hwo.notes_8 %}&nbsp;8. {{ hwo.notes_8 }}{% endif %}</td>
             </tr>
             <tr>
               <td rowspan="1" colspan="10">&nbsp;</td>

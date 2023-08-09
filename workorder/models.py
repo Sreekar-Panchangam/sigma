@@ -458,8 +458,6 @@ class HoistWorkOrder(models.Model):
     notes_6 = models.TextField(blank=True, null=True)
     notes_7 = models.TextField(blank=True, null=True)
     notes_8 = models.TextField(blank=True, null=True)
-    notes_9 = models.TextField(blank=True, null=True)
-    notes_10 = models.TextField(blank=True, null=True)
     packing = models.CharField(max_length=15, choices=GRAVITY_TYPE_CHOICES)
     sales_rep = models.CharField(max_length=10, choices=SALES_REP_CHOICES)
     transportation = models.CharField(max_length=100)

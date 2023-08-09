@@ -1,293 +1,279 @@
 <!DOCTYPE html>
-{% load static %}
 <html lang="en" dir="ltr">
   <head>
-    <meta charset="utf-8">
-    <title>{% block title %}Sigma{% endblock %}</title>
-
-    <link rel="stylesheet" href="{% static 'css/download.css'%}">
-
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sigma</title>
   </head>
   <body>
-    <div class="container row justify-content-center col-md-8">
-    <div class="centre-table-print">
-    <table border="1">
-            <tr>
-              <td scope="col" rowspan="2" colspan="2" class="centered-cell"><h1 class="table-h1-text-design">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;SIGMA</h1></td>
-              <td scope="col" rowspan="2" colspan="5" class="centered-cell"><h1 class="table-h3-text-design">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;HOIST WORK ORDER</h1></td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;W.O No.</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><h1 class="table-h2-text-design"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp{{ hwo.Work_Order_Number }}</td>
+    <div style="display: flex; justify-content: center;">
+    <table>
+            <tr style="display: table-row;">
+              <td style="text-align: center; padding-top: 11px; border: 1.5px solid black; border-top: 2px solid black; border-left: 2px solid black;" rowspan="2" colspan="2"><h1 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 900;">SIGMA</h1></td>
+              <td style="text-align: center; padding-top: 7px; border: 1.5px solid black; border-top: 2px solid black;" rowspan="2" colspan="5"><h1 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 800;">HOIST WORK ORDER</h1></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-top: 2px solid black;" rowspan="1" colspan="1">W.O No.</td>
+              <td style="text-align: center; padding-top: 9px; border: 1.5px solid black; border-top: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="2"><h1 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 26px; font-weight: 800;">{{ hwo.Work_Order_Number }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ hwo.date }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Date</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="2">{{ hwo.date }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;<b>Customer Information</b></td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;&nbsp;&nbsp;<b>Customer Information</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="7"><br>&nbsp;&nbsp;&nbsp;<b>{{ hwo.customer }}</b></td>
-              <td rowspan="2" colspan="1" class="centered-cell">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;P.O No.</td>
-              <td rowspan="2" colspan="2" class="centered-cell">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ hwo.P_O_Number }}</td>
+              <td style="padding-top: 4px; border: 0.5px solid grey; border-left: 2px solid black;" rowspan="1" colspan="7">&nbsp;&nbsp;&nbsp;<b>{{ hwo.customer }}</b></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="2" colspan="1">P.O No.</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="2" colspan="2">{{ hwo.P_O_Number }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="7"><br>&nbsp;&nbsp;&nbsp;{{ hwo.customer.address }}</td>
+              <td style="padding-top: 4px; border: 0.5px solid grey; border-left: 2px solid black;" rowspan="1" colspan="7">&nbsp;&nbsp;&nbsp;{{ hwo.customer.address }}&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="7"></td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Date</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ hwo.P_O_Date }}</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black;" rowspan="1" colspan="7"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Date</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="2">{{ hwo.P_O_Date }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="7"><br>&nbsp;</td>
-              <td rowspan="2" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;GSTIN</td>
-              <td rowspan="2" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ hwo.customer.gstin }}</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black;" rowspan="1" colspan="7">&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="2" colspan="1">GSTIN</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="2" colspan="2">&nbsp;&nbsp;&nbsp;{{ hwo.customer.gstin }}&nbsp;&nbsp;&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;City</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.customer.city }}</td>
-              <td rowspan="1" colspan="4" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Contact Person Phone</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="1">City</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.customer.city }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="4">Contact Person Phone</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;State</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.customer.state }}</td>
-              <td rowspan="1" colspan="4" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.customer.contact_person }}</td>
-              <td rowspan="2" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Delivery Date</td>
-              <td rowspan="2" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;{{ hwo.delivery_date }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="1">State</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.customer.state }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="4">{{ hwo.customer.contact_person }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="2" colspan="1">Delivery Date</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="2" colspan="2">{{ hwo.delivery_date }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;E-mail ID</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.customer.email }}</td>
-              <td rowspan="1" colspan="4" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.customer.website }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="1">E-mail ID</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.customer.email }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="4">{{ hwo.customer.website }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Hoist Size</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><h1 class="table-h2-text-design"><br>&nbsp;&nbsp;&nbsp;{{ hwo.hoist_size }}</h1></td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;C/C</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Quantity</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><h1 class="table-h2-text-design"><br>&nbsp;&nbsp;&nbsp;{{ hwo.quantity }}</h1></td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;No(s)</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">Hoist Size</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"><h1 class="table-h2-text-design">{{ hwo.hoist_size }}</h1></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">C/C</td>
+              <td rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">Quantity</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2"><h1 class="table-h2-text-design">{{ hwo.quantity }}</h1></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">No(s)</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><b><br>&nbsp;&nbsp;&nbsp;General Specification</b></td>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10"><h5><b>&nbsp;&nbsp;&nbsp;General Specification</b></h5></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Capacity</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.capacity }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Kg</td>
-              <td rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Hoist Code</td>
-              <td rowspan="1" colspan="3" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.hoist_code }}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Capacity</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.capacity }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Kg</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoist Code</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ hwo.hoist_code }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Height of Lift</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.height }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;mts</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Trolley Type</td>
-              <td rowspan="1" colspan="3" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.trolley_type }}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Height of Lift</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.height }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mts</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Trolley Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ hwo.trolley_type }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Fall</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.fall }}</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Additional Feature</td>
-              <td rowspan="1" colspan="3" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.additional_feature }}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Fall</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.fall }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Additional Feature</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ hwo.additional_feature }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;<b>Technical Specification</b></td>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;&nbsp;&nbsp;<b>Technical Specification</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Hoisting Speed</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.hoist_speed }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;mpm</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Wheel</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_wheel }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.tread }}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoisting Speed</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.hoist_speed }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mpm</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Wheel</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.C_T_wheel }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ hwo.tread }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Hoist Motor</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.hoist_motor }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;HP</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Wheel Type</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_wheel_type }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_wheel_type_2 }}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoist Motor</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.hoist_motor }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">HP</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Wheel Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.C_T_wheel_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ hwo.C_T_wheel_type_2 }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Hoist Motor RPM</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.hoist_motor_rpm }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;mpm</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Speed</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_speed }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;mpm</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoist Motor RPM</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.hoist_motor_rpm }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mpm</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Speed</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.C_T_speed }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mpm</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Hoist Brake</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.hoist_brake }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.hoist_brake_type }}</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Gear Box</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_gear_box }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Std</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoist Brake</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.hoist_brake }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.hoist_brake_type }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Gear Box</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.C_T_gear_box }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">Std</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Rope Drum Code</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.rope_drum_code }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.rope_reeving }}</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Motor</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_motor }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;HP</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Rope Drum Code</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.rope_drum_code }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.rope_reeving }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Motor</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.C_T_motor }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">HP</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Wire Rope</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.wire_rope }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;mm</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Motor RPM</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_motor_rpm }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;mpm</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Wire Rope</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.wire_rope }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mm</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Motor RPM</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.C_T_motor_rpm }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mpm</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Wire Length</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.wire_length }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;mts</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Brake</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_brake }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_brake_type }}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Wire Length</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.wire_length }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mts</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Brake</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.C_T_brake }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ hwo.C_T_brake_type }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;<b>Special Requirements</b></td>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;&nbsp;&nbsp;<b>Special Requirements</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4"><br>&nbsp;&nbsp;&nbsp;Limit Switch</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="5"><br>&nbsp;&nbsp;&nbsp;Creep Speed</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="4">&nbsp;&nbsp;&nbsp;Limit Switch</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="5">&nbsp;&nbsp;&nbsp;Creep Speed</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Gravity Type</td>
-              <td rowspan="1" colspan="1" class="centered-cell">{% if hwo.gravity_type %}<br>&nbsp;&nbsp;&nbsp;{{ hwo.gravity_type }}{% endif %}</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;Hoist Creep</td>
-              <td rowspan="1" colspan="1" class="centered-cell">{% if hwo.hoist_creep %}<br>&nbsp;&nbsp;&nbsp;{{ hwo.hoist_creep }}{% endif %}</td>
-              <td rowspan="1" colspan="1" class="centered-cell">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
-              <td rowspan="1" colspan="1" class="centered-cell">&nbsp;</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Gravity Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{% if hwo.gravity_type %}&nbsp;&nbsp;&nbsp;{{ hwo.gravity_type }}{% endif %}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoist Creep</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{% if hwo.hoist_creep %}&nbsp;&nbsp;&nbsp;{{ hwo.hoist_creep }}{% endif %}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Limit Switch</td>
-              <td rowspan="1" colspan="1" class="centered-cell">{% if hwo.C_T_limit_switch %}<br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_limit_switch }}{% endif %}</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;C T Creep</td>
-              <td rowspan="1" colspan="1" class="centered-cell">{% if hwo.C_T_creep %}<br>&nbsp;&nbsp;&nbsp;{{ hwo.C_T_creep }}{% endif %}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"></td>
-              <td rowspan="1" colspan="1" class="centered-cell"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Limit Switch</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{% if hwo.C_T_limit_switch %}&nbsp;&nbsp;&nbsp;{{ hwo.C_T_limit_switch }}{% endif %}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Creep</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{% if hwo.C_T_creep %}&nbsp;&nbsp;&nbsp;{{ hwo.C_T_creep }}{% endif %}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1"></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;L T Limit Switch</td>
-              <td rowspan="1" colspan="1" class="centered-cell">{% if hwo.L_T_limit_switch %}<br>&nbsp;&nbsp;&nbsp;{{ hwo.L_T_limit_switch }}{% endif %}</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2"><br>&nbsp;&nbsp;&nbsp;L T Creep</td>
-              <td rowspan="1" colspan="1" class="centered-cell">{% if hwo.L_T_creep %}<br>&nbsp;&nbsp;&nbsp;{{ hwo.L_T_creep }}{% endif %}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"></td>
-              <td rowspan="1" colspan="1" class="centered-cell"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;L T Limit Switch</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{% if hwo.L_T_limit_switch %}&nbsp;&nbsp;&nbsp;{{ hwo.L_T_limit_switch }}{% endif %}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;L T Creep</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{% if hwo.L_T_creep %}&nbsp;&nbsp;&nbsp;{{ hwo.L_T_creep }}{% endif %}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1"></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;<b>Additional Information</b></td>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;&nbsp;&nbsp;<b>Additional Information</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Flange Width</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.flange_width }}</td>
-              <td rowspan="1" colspan="1" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;mm</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Outdoor Cover</td>
-              <td rowspan="1" colspan="3" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.outdoor_cover }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">Flange Width</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ hwo.flange_width }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mm</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">Outdoor Cover</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ hwo.outdoor_cover }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><b><br>&nbsp;&nbsp;&nbsp;Notes:</b></td>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10"><b>&nbsp;&nbsp;&nbsp;Notes:</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4"><br>&nbsp;&nbsp;&nbsp;1. {{ hwo.notes_1 }}</td>
-              <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5"><br>&nbsp;&nbsp;&nbsp;6. {{ hwo.notes_6 }}</td>
+              <td style="padding-top: 4px; border-left: 2px solid black; border-right: 1.5px solid black; border-top: 1.5px solid black; border-bottom: 0.5px solid grey;" rowspan="1" colspan="4">{% if hwo.notes_1 %}&nbsp;&nbsp;&nbsp;1. {{ hwo.notes_1 }}{% endif %}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1">&nbsp;</td>
+              <td style="padding-top: 4px; border-left: 1.5px solid black; border-right: 2px solid black; border-top: 1.5px solid black; border-bottom: 0.5px solid grey;" rowspan="1" colspan="5">{% if hwo.notes_5 %}&nbsp;&nbsp;&nbsp;5. {{ hwo.notes_5 }}{% endif %}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4"><br>&nbsp;&nbsp;&nbsp;2. {{ hwo.notes_2 }}</td>
-              <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5"><br>&nbsp;&nbsp;&nbsp;7. {{ hwo.notes_7 }}</td>
+              <td style="padding-top: 4px; border-left: 2px solid black; border-right: 1.5px solid black; border-top: 0.5px solid grey; border-bottom: 0.5px solid grey;" rowspan="1" colspan="4">{% if hwo.notes_2 %}&nbsp;&nbsp;&nbsp;2. {{ hwo.notes_2 }}{% endif %}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1">&nbsp;</td>
+              <td style="padding-top: 4px; border-left: 1.5px solid black; border-right: 2px solid black; border-top: 0.5px solid grey; border-bottom: 0.5px solid grey;" rowspan="1" colspan="5">{% if hwo.notes_6 %}&nbsp;&nbsp;&nbsp;6. {{ hwo.notes_6 }}{% endif %}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4"><br>&nbsp;&nbsp;&nbsp;3. {{ hwo.notes_3 }}</td>
-              <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5"><br>&nbsp;&nbsp;&nbsp;8. {{ hwo.notes_8 }}</td>
+              <td style="padding-top: 4px; border-left: 2px solid black; border-right: 1.5px solid black; border-top: 0.5px solid grey; border-bottom: 0.5px solid grey;" rowspan="1" colspan="4">{% if hwo.notes_3 %}&nbsp;&nbsp;&nbsp;3. {{ hwo.notes_3 }}{% endif %}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1">&nbsp;</td>
+              <td style="padding-top: 4px; border-left: 1.5px solid black; border-right: 2px solid black; border-top: 0.5px solid grey; border-bottom: 0.5px solid grey;" rowspan="1" colspan="5">{% if hwo.notes_7 %}&nbsp;&nbsp;&nbsp;7. {{ hwo.notes_7 }}{% endif %}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4"><br>&nbsp;&nbsp;&nbsp;4. {{ hwo.notes_4 }}</td>
-              <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5"><br>&nbsp;&nbsp;&nbsp;9. {{ hwo.notes_9 }}</td>
+              <td style="padding-top: 4px; border-left: 2px solid black; border-right: 1.5px solid black; border-top: 0.5px solid grey; border-bottom: 1.5px solid black;" rowspan="1" colspan="4">{% if hwo.notes_4 %}&nbsp;&nbsp;&nbsp;4. {{ hwo.notes_4 }}{% endif %}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1">&nbsp;</td>
+              <td style="padding-top: 4px; border-left: 1.5px solid black; border-right: 2px solid black; border-top: 0.5px solid grey; border-bottom: 1.5px solid black;" rowspan="1" colspan="5">{% if hwo.notes_8 %}&nbsp;&nbsp;&nbsp;8. {{ hwo.notes_8 }}{% endif %}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="4"><br>&nbsp;&nbsp;&nbsp;5. {{ hwo.notes_5 }}</td>
-              <td rowspan="1" colspan="1">&nbsp;</td>
-              <td rowspan="1" colspan="5"><br>&nbsp;&nbsp;&nbsp;10. {{ hwo.notes_10 }}</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;&nbsp;&nbsp;<b>Despatch</b></td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;<b>Despatch</b></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">Packing</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ hwo.packing }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">Transportation</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ hwo.transportation }}</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Packing</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.packing }}</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Transportation</td>
-              <td rowspan="1" colspan="3" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.transportation }}</td>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="10">&nbsp;</td>
             </tr>
             <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black; border-bottom: 2px solid black;" rowspan="1" colspan="2">Sales Rep</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-bottom: 2px solid black;" rowspan="1" colspan="2">{{ hwo.sales_rep }}</td>
+              <td style="border: 0.5px solid grey; border-bottom: 2px solid black;" rowspan="1" colspan="1"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-bottom: 2px solid black;" rowspan="1" colspan="2">Issued To</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black; border-bottom: 2px solid black;" rowspan="1" colspan="3">{{ hwo.issued_to }}</td>
             </tr>
-            <tr>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Sales Rep</td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.sales_rep }}</td>
-              <td rowspan="1" colspan="1"></td>
-              <td rowspan="1" colspan="2" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;Issued To</td>
-              <td rowspan="1" colspan="3" class="centered-cell"><br>&nbsp;&nbsp;&nbsp;{{ hwo.issued_to }}</td>
-            </tr>
-            <tr>
-              <td rowspan="1" colspan="10"><br>&nbsp;&nbsp;&nbsp;&nbsp;</td>
-            </tr>
-    </table><br>
-  </div>
+    </table>
   </div>
   </body>
 </html>

@@ -82,7 +82,7 @@ WSGI_APPLICATION = "sigma.wsgi.application"
 
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.mysql', 
+        'ENGINE': 'django.db.backends.mysql',
         'NAME': 'sigma',
         'USER': 'root',
         'PASSWORD': 'Music_8055',
@@ -134,6 +134,7 @@ MEDIA_URL = 'media/'
 MEDIA_ROOT = MEDIA_DIR
 
 WKHTMLTOPDF_CMD = 'C:/Program Files/wkhtmltopdf/bin/wkhtmltopdf.exe'
+WEASYPRINT_BASEURL = '/'
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.2/ref/settings/#default-auto-field
