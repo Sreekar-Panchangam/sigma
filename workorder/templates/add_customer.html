@@ -1,0 +1,96 @@
+{% extends "base.html" %}
+{% block title %}
+    Customer - Add
+{% endblock title %}
+{% block content %}
+    <div class="container">
+      <h1 class="h1-class-design">Add New Customer</h1>
+      <form method="post">
+        {% csrf_token %}
+        <div class="sub-section">
+          <h5 class="h5-class-design">Customer Info</h5>
+          <table class="full-width-table">
+            <tr>
+              <td><label class="label-class-design" for="title">Title:</label></td>
+              <td><label class="label-class-design" for="name">Customer Name:</label></td>
+            </tr>
+            <tr>
+              <td>
+                <select class="input-style" name="title">
+                    <option value="" disabled selected>Title</option>
+                    <option value="Mr.">Mr.</option>
+                    <option value="Mrs.">Mrs.</option>
+                    <option value="Miss.">Miss.</option>
+                    <option value="Dr.">Dr.</option>
+                </select><br>
+              </td>
+              <td><input class="input-style" type="text" name="name" placeholder="Customer Name"><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="address">Address:</label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input class="input-style-large" type="text" name="address" placeholder="Address"><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="city">City:</label></td>
+              <td><label class="label-class-design" for="state">State:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="city" placeholder="City"><br></td>
+              <td>
+                <select class="input-style" name="state">
+                  <option value="Karnataka" selected>Karnataka</option>
+                  {% for state_value, state_label in STATE_CHOICES %}
+                      <option value="{{ state_value }}">{{ state_label }}</option>
+                  {% endfor %}
+                </select><br>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="contact_person">Contact Person:</label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input class="input-style-medium" type="text" name="contact_person" placeholder="Contact Person"><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="phone">Phone:</label></td>
+              <td><label class="label-class-design" for="email">Email ID:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="phone" placeholder="Phone"></td>
+              <td><input class="input-style" type="text" name="email" placeholder="Email ID"></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="gstin">GSTIN:</label></td>
+              <td><label class="label-class-design" for="website">Website:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="gstin" placeholder="GSTIN"></td>
+              <td><input class="input-style" type="text" name="website" placeholder="Website"></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+        <input type="submit" value="Submit" class="btn btn-primary button-class-design">
+    </form>
+    </div>
+
+{% endblock content %}

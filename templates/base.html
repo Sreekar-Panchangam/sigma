@@ -24,7 +24,13 @@
         </div>
         <div class="navbar-nav ml-auto">
           {% if user.is_authenticated %}
-            <a class="nav-item nav-link nav-item-design" href="{% url 'workorder:hwo_search' %}" class="btn btn-simple">Hoist Work Order</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Hoist Work Order</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'workorder:hwo_search' %}">Search HWO</a>
+                <a class="dropdown-item" href="{% url 'workorder:add_hwo' %}">Add New HWO</a>
+              </div>
+            </li>
             <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Information Sheet</a>
             <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Spare Work Order</a>
             <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Admin</a>

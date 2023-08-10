@@ -218,3 +218,69 @@ input[type="date"] {
     margin-top: 50px;
     margin-bottom: 50px;
 }
+
+.full-width-table {
+    width: 100%;
+    table-layout: fixed;
+}
+
+.h5-class-design{
+    color: #000;
+    font-family: Poppins;
+    font-size: 24px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
+}
+
+.sub-section{
+    margin-top: 40px;
+}
+
+.input-style {
+  width: 450px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #F5F5F5;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 5px;
+}
+
+.input-style-small{
+  width: 220px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #F5F5F5;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 6px;
+}
+
+.input-style-medium{
+  width: 1005px;
+  height: 48px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #F5F5F5;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 5px;
+}
+
+.input-style-large{
+  width: 1005px;
+  height: 100px;
+  flex-shrink: 0;
+  border-radius: 10px;
+  border: 1px solid #000;
+  background: #F5F5F5;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-right: 5px;
+}

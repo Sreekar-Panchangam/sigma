@@ -1,13 +1,16 @@
 from django.shortcuts import render, redirect
 from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework import status
+from django.urls import reverse
 from rest_framework.views import APIView
 from django.db.models import Q
 import pdfkit
 from django.template.loader import get_template
 from xhtml2pdf import pisa
-from .models import HoistWorkOrder
+from .models import *
 from .forms import HoistWorkOrderFilterForm
-from .serializers import HoistWorkOrderSerializer
+from .serializers import *
 from sigma import settings
 from sigma.settings import WKHTMLTOPDF_CMD
 
@@ -107,3 +110,73 @@ class HoistWorkOrderDetailView(APIView):
     #     response = HttpResponse(pdf, content_type='application/pdf')
     #     response['Content-Disposition'] = f'filename="{workorder.Work_Order_Number}.pdf"'
     #     return response
+
+class AddNewHoistWorkOrderView(APIView):
+    def get(self, request):
+        customers = Customer.objects.all()
+        context = {'customers':customers}
+        return render(request, 'add_hwo.html', context)
+
+    def post(self, request, format=None):
+        data = request.data.copy()
+        cid = data['customer']
+        print(cid)
+        cust = Customer.objects.get(name=cid)
+        data['customer']=cust.id
+        serializer = HoistWorkOrderAddSerializer(data=data)
+        if serializer.is_valid():
+            instance = serializer.save()
+            hwo_id = instance.Work_Order_Number
+            detail_url = reverse('workorder:hwo_detail', args=[hwo_id])
+            return redirect(detail_url)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class AddNewCustomerView(APIView):
+    def get(self, request):
+        STATE_CHOICES = [
+            ('Andaman and Nicobar Islands', 'Andaman and Nicobar Islands'),
+            ('Andhra Pradesh', 'Andhra Pradesh'),
+            ('Arunachal Pradesh', 'Arunachal Pradesh'),
+            ('Assam', 'Assam'),
+            ('Bihar', 'Bihar'),
+            ('Chandigarh', 'Chandigarh'),
+            ('Chhattisgarh', 'Chhattisgarh'),
+            ('Dadra and Nagar Haveli and Daman and Diu', 'Dadra and Nagar Haveli and Daman and Diu'),
+            ('Delhi', 'Delhi'),
+            ('Goa', 'Goa'),
+            ('Gujarat', 'Gujarat'),
+            ('Haryana', 'Haryana'),
+            ('Himachal Pradesh', 'Himachal Pradesh'),
+            ('Jammu and Kashmir', 'Jammu and Kashmir'),
+            ('Jharkhand', 'Jharkhand'),
+            ('Karnataka', 'Karnataka'),
+            ('Kerala', 'Kerala'),
+            ('Lakshadweep', 'Lakshadweep'),
+            ('Madhya Pradesh', 'Madhya Pradesh'),
+            ('Maharashtra', 'Maharashtra'),
+            ('Manipur', 'Manipur'),
+            ('Meghalaya', 'Meghalaya'),
+            ('Mizoram', 'Mizoram'),
+            ('Nagaland', 'Nagaland'),
+            ('Odisha', 'Odisha'),
+            ('Puducherry', 'Puducherry'),
+            ('Punjab', 'Punjab'),
+            ('Rajasthan', 'Rajasthan'),
+            ('Sikkim', 'Sikkim'),
+            ('Tamil Nadu', 'Tamil Nadu'),
+            ('Telangana', 'Telangana'),
+            ('Tripura', 'Tripura'),
+            ('Uttar Pradesh', 'Uttar Pradesh'),
+            ('Uttarakhand', 'Uttarakhand'),
+            ('West Bengal', 'West Bengal'),
+        ]
+        context = {'STATE_CHOICES':STATE_CHOICES}
+        return render(request, 'add_customer.html', context)
+
+    def post(self, request, format=None):
+        serializer = CustomerSerializer(data=request.data)
+        if serializer.is_valid():
+            serializer.save()
+            detail_url = reverse('workorder:add_hwo')
+            return redirect(detail_url)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
