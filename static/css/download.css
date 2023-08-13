@@ -1,0 +1,31 @@
+.centered-cell {
+    display: table-cell;
+    vertical-align: middle;
+    text-align: center;
+    height: 100%;
+}
+
+.centered-cell-ll{
+    margin: 200px;
+}
+
+.centre-table{
+    display: flex;
+    justify-content: center;
+}
+
+.centre-button{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 50px;
+}
+
+.centre-table-print{
+    display: flex;
+    margin-left: 50px;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en" dir="ltr">
+<head>
+  <meta charset="utf-8">
+  <title>{% block title %}Sigma{% endblock %}</title>
+
+  <!-- Latest compiled and minified CSS -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+  <!-- Alternative to Bootstrap 3 Glyphicons -->
+  <link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+
+  <link rel="stylesheet" href="{% static 'css/master.css'%}">
+
+</head>
+  <body>
+    <nav class="navbar navbar-expand-xl mynav" role="navigation" id="navbar">
+        <div class="navbar-nav align-items-center">
+          <a class="navbar-brand mynav" href="{% url 'index' %}">SIGMA</a>
+        </div>
+        <div class="navbar-nav ml-auto">
+          {% if user.is_authenticated %}
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Hoist Work Order</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'workorder:hwo_search' %}">Search HWO</a>
+                <a class="dropdown-item" href="{% url 'workorder:add_hwo' %}">Add New HWO</a>
+              </div>
+            </li>
+            <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Information Sheet</a>
+            <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Spare Work Order</a>
+            <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Admin</a>
+            <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Log out</a>
+          {% else %}
+            <a class="nav-item nav-link" href="#" class="btn btn-simple">Log in</a>
+          {% endif %}
+        </div>
+    </nav>
+
+    <div class="">
+        {% block content %}
+
+        {% endblock %}
+    </div>
+
+    <!-- Latest compiled and minified jQuery -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+
+  </body>
+</html>
