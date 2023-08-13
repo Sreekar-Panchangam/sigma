@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block title %}
+    Hoist Information Sheet - Results
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <h1 class="h1-class-design">The following Information Sheets match your search query:</h1>
+    <div class="container">
+    {% for sheet in hiss %}
+        <h5 class="result-list-class-design"><a href="#">Information Sheet {{ sheet.serial_number }}</a></h5>
+        {% comment %} <h5 class="result-list-class-design"><a href="{% url 'infosheet:his_detail' sheet.serial_number %}">Information Sheet {{ sheet.serial_number }}</a></h5> {% endcomment %}
+    {% endfor %}
+    </div>
+</div>
+{% endblock content %}

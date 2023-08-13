@@ -23,4 +23,5 @@ urlpatterns = [
     path('favicon.ico', views.favicon),
     path("", views.IndexView.as_view(), name='index'),
     path("workorder/", include('workorder.urls',namespace='workorder')),
+    path("infosheet/", include('infosheet.urls',namespace='infosheet')),
 ]

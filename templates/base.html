@@ -31,7 +31,13 @@
                 <a class="dropdown-item" href="{% url 'workorder:add_hwo' %}">Add New HWO</a>
               </div>
             </li>
-            <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Information Sheet</a>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbardrop" data-toggle="dropdown">Information Sheet</a>
+              <div class="dropdown-menu">
+                <a class="dropdown-item" href="{% url 'infosheet:his_search' %}">Search Info Sheet</a>
+                {% comment %} <a class="dropdown-item" href="{% url 'infosheet:add_his' %}">Add New Info Sheet</a> {% endcomment %}
+              </div>
+            </li>
             <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Spare Work Order</a>
             <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Admin</a>
             <a class="nav-item nav-link nav-item-design" href="#" class="btn btn-simple">Log out</a>
