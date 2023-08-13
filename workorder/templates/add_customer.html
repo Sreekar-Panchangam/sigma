@@ -24,7 +24,7 @@
                     <option value="Dr.">Dr.</option>
                 </select><br>
               </td>
-              <td><input class="input-style" type="text" name="name" placeholder="Customer Name"><br></td>
+              <td><input class="input-style" type="text" name="name" placeholder="Customer Name" required><br></td>
             </tr>
             <tr>
               <td colspan="2">&nbsp;</td>
@@ -33,7 +33,7 @@
               <td colspan="2"><label class="label-class-design" for="address">Address:</label></td>
             </tr>
             <tr>
-              <td colspan="2"><input class="input-style-large" type="text" name="address" placeholder="Address"><br></td>
+              <td colspan="2"><input class="input-style-large" type="text" name="address" placeholder="Address" required><br></td>
             </tr>
             <tr>
               <td colspan="2">&nbsp;</td>
@@ -43,7 +43,7 @@
               <td><label class="label-class-design" for="state">State:</label></td>
             </tr>
             <tr>
-              <td><input class="input-style" type="text" name="city" placeholder="City"><br></td>
+              <td><input class="input-style" type="text" name="city" placeholder="City" required><br></td>
               <td>
                 <select class="input-style" name="state">
                   <option value="Karnataka" selected>Karnataka</option>
@@ -81,7 +81,7 @@
               <td><label class="label-class-design" for="website">Website:</label></td>
             </tr>
             <tr>
-              <td><input class="input-style" type="text" name="gstin" placeholder="GSTIN"></td>
+              <td><input class="input-style" type="text" name="gstin" placeholder="GSTIN" pattern="[A-Z0-9]{15}" title="GSTIN must be exactly 15 characters. Capital letters and numbers only" required></td>
               <td><input class="input-style" type="text" name="website" placeholder="Website"></td>
             </tr>
             <tr>

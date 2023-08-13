@@ -114,7 +114,8 @@ class HoistWorkOrderDetailView(APIView):
 class AddNewHoistWorkOrderView(APIView):
     def get(self, request):
         customers = Customer.objects.all()
-        context = {'customers':customers}
+        latest_hwo = HoistWorkOrder.objects.all().order_by("-Work_Order_Number")[0]
+        context = {'customers':customers,'latest_hwo':latest_hwo.Work_Order_Number+1}
         return render(request, 'add_hwo.html', context)
 
     def post(self, request, format=None):
