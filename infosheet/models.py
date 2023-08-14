@@ -69,5 +69,8 @@ class HoistInformationSheet(models.Model):
     fitter_name = models.CharField(max_length=100)
     engineer_in_charge = models.CharField(max_length=100)
 
+    # Test Certificate
+    date_of_test = models.DateField(blank=True, null=True)
+
     def __str__(self):
         return self.serial_number

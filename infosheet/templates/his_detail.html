@@ -1,0 +1,355 @@
+{% extends "base.html" %}
+{% block title %}
+    Hoist Information Sheet - Detail
+{% endblock title %}
+{% block content %}
+<div class="container">
+    <h1 class="h1-class-design">Detail Page</h1><br>
+    <div class="centre-table">
+    <table border="5">
+            <tr>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all"><h1 class="table-h1-text-design">SIGMA</h1></td>
+              <td rowspan="1" colspan="6" class="centered-cell cell-border-all"><h1 class="table-h3-text-design">INFORMATION SHEET</h1></td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Sl. No.</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all"><h1 class="table-h2-text-design">{{ his.serial_number }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="cell-border-all">&nbsp;<b>Customer Information</b></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="7" class="cell-border-all">&nbsp;<b>{{ his.work_order.customer }}</b></td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">W.O. No.</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.Work_Order_Number }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="7" class="cell-border-no-bottom">&nbsp;{{ his.work_order.customer.address }}</td>
+              <td rowspan="2" colspan="2" class="centered-cell cell-border-all">P.O. No.</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.P_O_Number }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="7">&nbsp;</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.P_O_Date }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="7">&nbsp;</td>
+              <td rowspan="2" colspan="2" class="centered-cell cell-border-all">Dispath Date</td>
+              <td rowspan="2" colspan="2" class="centered-cell cell-border-all">{{ his.dispatch_date }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1" class="cell-border-all">City</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.customer.city }}</td>
+              <td rowspan="1" colspan="1" class="cell-border-all">State</td>
+              <td rowspan="1" colspan="3" class="centered-cell cell-border-all">{{ his.work_order.customer.state }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="cell-border-all">&nbsp;<b>General Specification</b></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Capacity</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.capacity }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Kg</td>
+              <td rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoist Code</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.hoist_code }}</td>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoist Size</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.hoist_size }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">C/C</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoist Type</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.trolley_type }}</td>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Height of Lift</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.height }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Mts</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all cell-border-all">&nbsp;Additional Feature</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.additional_feature }}</td>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="cell-border-no-bottom">&nbsp;<b>Gear Box & Drum</b></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoisting Speed</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.hoist_speed }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">m/mim</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Rope Drum Dia</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.rope_drum_dia }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Gear Box Stages</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.gearbox_stages }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Drum Length</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.drum_length }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Heat Treatment</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.heat_treatment }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Drum Pitch</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.drum_pitch }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Fall System</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.fall }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Rope Guide I D</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.rope_guide_id }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Wire Rope</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.wire_rope }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Guide Thread Depth</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.guide_thread_depth }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Rope Length</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.wire_length }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mts</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Guide Thread Pitch</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.guide_thread_pitch }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="cell-border-no-bottom">&nbsp;<b>Bottom Block & Idler</b></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Sheave Dia</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.sheave_dia }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Idler Sheave Dia</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.idler_sheave_dia }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;No. of Sheaves</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.no_of_sheaves }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">No(s)</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;No. Idler of Sheaves</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.no_of_idler }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">No(s)</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Sheave Covers</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.sheave_covers }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Set</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hook Type</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.hook_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all"></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="cell-border-no-bottom">&nbsp;<b>Cross Traverse & Trolley</b></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Wheel</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.C_T_wheel }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.work_order.tread }}</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Speed</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.C_T_speed }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">m/mim</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;No. of C T Wheels</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.C_T_wheel_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.work_order.C_T_wheel_type_2 }}</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;C T Gear Box</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.C_T_gear_box }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Std</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Flange Width</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.work_order.flange_width }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">mm</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;No. of Gear Box</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.no_of_gear_box }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">No(s)</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="cell-border-no-bottom">&nbsp;<b>Electricals</b></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">HP</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">RPM</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Sl. No.</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Make</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Type</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Model</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Sl. No.</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Make</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;Motor MH</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.work_order.hoist_motor }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.work_order.hoist_motor_rpm }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.motor_mh_serial_number }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.motor_mh_make }}</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;Brake MH</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;{{ his.work_order.hoist_brake_type }}&nbsp;</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;{{ his.work_order.hoist_brake }}&nbsp;</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.brake_mh_serial_number }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.brake_mh_make }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;Motor CT</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.work_order.C_T_motor }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.work_order.C_T_motor_rpm }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.motor_ct_serial_number }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.motor_ct_make }}</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="1" class="cell-border-all">&nbsp;Brake CT</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;{{ his.work_order.C_T_brake_type }}&nbsp;</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">&nbsp;{{ his.work_order.C_T_brake }}&nbsp;</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.brake_ct_serial_number }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.brake_ct_make }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Limit Switch</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Type</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Sl. No.</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Make</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Limit Switch</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Type</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Sl. No.</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Make</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoisting</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.hoisting_limit_switch_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.hoisting_limit_switch_serial_number }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.hoisting_limit_switch_make }}</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;CT</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ ct_limit_switch_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ ct_limit_switch_serial_number }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ ct_limit_switch_make }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="cell-border-no-bottom">&nbsp;<b>Control Panel & Pendent</b></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">Type</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Make</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;VFD</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Model</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Type</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">Make</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Control Panel</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.control_panel_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.control_panel_make }}</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Hoisting VFD</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.hoist_vfd_model }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.hoist_vfd_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.hoist_vfd_make }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;Pendent</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.pendent_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.pendent_make }}</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;CT VFD</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.ct_vfd_model }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.ct_vfd_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.ct_vfd_make }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;</td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all"></td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all"></td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="cell-border-all">&nbsp;LT VFD</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.lt_vfd_model }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.lt_vfd_type }}</td>
+              <td rowspan="1" colspan="1" class="centered-cell cell-border-all">{{ his.lt_vfd_make }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="cell-border-no-bottom">&nbsp;<b>Additional Information</b></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11" class="centered-cell cell-border-all">{{ his.additional_information }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2"></td>
+              <td rowspan="1" colspan="3"></td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">{{ his.fitter_name }}</td>
+              <td rowspan="1" colspan="3" class="centered-cell cell-border-all">{{ his.engineer_in_charge }}</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">Sales Rep</td>
+              <td rowspan="1" colspan="3" class="centered-cell cell-border-all">{{ his.work_order.sales_rep }}</td>
+              <td rowspan="1" colspan="1"></td>
+              <td rowspan="1" colspan="2" class="centered-cell cell-border-all">Fitter's Name</td>
+              <td rowspan="1" colspan="3" class="centered-cell cell-border-all">Engg. In-charge</td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+    </table><br>
+  </div>
+    <form method="POST">
+        {% csrf_token %}
+        <button class="button-class-design centre-button" type="submit">Save as PDF</button>
+    </form>
+</div>
+{% endblock content %}

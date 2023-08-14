@@ -4,6 +4,8 @@ from rest_framework.views import APIView
 from django.db.models import Q
 from .models import HoistInformationSheet
 from workorder.models import HoistWorkOrder
+from django.template.loader import get_template
+from xhtml2pdf import pisa
 
 # Create your views here.
 class InformationSheetListView(APIView):
@@ -46,3 +48,24 @@ class InformationSheetListView(APIView):
         }
         return render(request, 'his_search_results.html', context)
     
+class InformationSheetDetailView(APIView):
+    def get(self, request, his):
+        infosheet = HoistInformationSheet.objects.get(serial_number=his)
+        context = {'his':infosheet}
+        return render(request, 'his_detail.html', context)
+    
+    def post(self, request, his):
+        infosheet = HoistInformationSheet.objects.get(serial_number=his)
+        slnum = infosheet.serial_number
+        context = {'his':infosheet}
+        template_path = 'download_his.html'
+        response = HttpResponse(content_type='application/pdf')
+        response['Content-Disposition'] = f'attachment; filename="{slnum}.pdf"'
+        template = get_template(template_path)
+        html = template.render(context)
+
+        pisa_status = pisa.CreatePDF(
+        html, dest=response)
+        if pisa_status.err:
+            return HttpResponse('We had some errors <pre>' + html + '</pre>')
+        return response

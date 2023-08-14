@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    <title>Sigma</title>
+  </head>
+  <body>
+    <div style="display: flex; justify-content: center;">
+    <table>
+            <tr style="display: table-row;">
+              <td style="text-align: center; padding-top: 11px; border: 1.5px solid black; border-top: 2px solid black; border-left: 2px solid black;" rowspan="1" colspan="2"><h1 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 30px; font-weight: 900;">SIGMA</h1></td>
+              <td style="text-align: center; padding-top: 7px; border: 1.5px solid black; border-top: 2px solid black;" rowspan="1" colspan="6"><h1 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 24px; font-weight: 800;">INFORMATION SHEET</h1></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-top: 2px solid black;" rowspan="1" colspan="1">Sl. No</td>
+              <td style="text-align: center; padding-top: 9px; border: 1.5px solid black; border-top: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="2"><h1 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 800;">{{ his.serial_number }}</td>
+            </tr>
+            <tr>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11">&nbsp;&nbsp;&nbsp;<b>Customer Information</b></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="7">&nbsp;&nbsp;&nbsp;<b>{{ his.work_order.customer }}</b></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">W.O No.</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="2">{{ his.work_order.Work_Order_Number }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 0.5px solid grey; border-left: 2px solid black;" rowspan="1" colspan="7">&nbsp;&nbsp;&nbsp;<b>{{ his.work_order.customer.address }}</b></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="2" colspan="2">P.O. No.</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="2" colspan="2">{{ his.work_order.P_O_Number }}<br>{{ his.work_order.P_O_Date }}</td>
+            </tr>
+            <tr>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black;" rowspan="1" colspan="7"></td>
+            </tr>
+            <tr>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black;" rowspan="1" colspan="7"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="2" colspan="2">Dispatch Date</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="2" colspan="2">{{ his.dispatch_date }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;City</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.customer.city }}</td>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;State</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="3">{{ his.work_order.customer.state }}</td>
+            </tr>
+            <tr>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11"><h5><b>&nbsp;&nbsp;&nbsp;General Specification</b></h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Capacity</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.capacity }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Kg</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoist Code</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ his.work_order.hoist_code }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoist Size</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.hoist_size }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">C/C</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoist Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ his.work_order.trolley_type }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Height of Lift</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.height }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Mts</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Additional Feature</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ his.work_order.additional_feature }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11"><h5><b>&nbsp;&nbsp;&nbsp;Gear Box & Drum</b></h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoisting Speed</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.hoist_speed }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">m/mim</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Rope Drum Dia</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.rope_drum_dia }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mm</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Gear Box Stages</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.gearbox_stages }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Drum Length</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.drum_length }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mm</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Heat Treatment</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.heat_treatment }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Drum Pitch</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.drum_pitch }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mm</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Fall System</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.fall }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Rope Guide I D</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.rope_guide_id }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mm</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Wire Rope</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.wire_rope }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mm</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Guide Thread Depth</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.guide_thread_depth }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mm</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Rope Length</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.wire_length }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mts</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Guide Thread Pitch</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.guide_thread_pitch }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mm</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11"><h5><b>&nbsp;&nbsp;&nbsp;Bottom Block & Idler</b></h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Sheave Dia</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.sheave_dia }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mm</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Idler Sheave Dia</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.idler_sheave_dia }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">mm</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;No. of Sheaves</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.no_of_sheaves }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">No(s)</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;No. Idler of Sheaves</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.no_of_idler }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">No(s)</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Sheave Covers</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.sheave_covers }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Set</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hook Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.hook_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1"></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11"><h5><b>&nbsp;&nbsp;&nbsp;Cross Traverse & Trolley</b></h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Wheel</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.C_T_wheel }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.work_order.tread }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Speed</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.C_T_speed }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">m/mim</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;No. of C T Wheels</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.C_T_wheel_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.work_order.C_T_wheel_type_2 }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;C T Gear Box</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.C_T_gear_box }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">Std</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Flange Width</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.work_order.flange_width }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">mm</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;No. of Gear Box</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.no_of_gear_box }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">No(s)</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11"><h5><b>&nbsp;&nbsp;&nbsp;Electricals</b></h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="1">&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">HP</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">RPM</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Sl. No.</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Make</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Model</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Sl. No.</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">Make</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;Motor MH</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.work_order.hoist_motor }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.work_order.hoist_motor_rpm }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.motor_mh_serial_number }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.motor_mh_make }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;Brake MH</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">&nbsp;{{ his.work_order.hoist_brake_type }}&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">&nbsp;{{ his.work_order.hoist_brake }}&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.brake_mh_serial_number }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ his.brake_mh_make }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;Motor CT</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.work_order.C_T_motor }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.work_order.C_T_motor_rpm }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.motor_ct_serial_number }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.motor_ct_make }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">&nbsp;&nbsp;&nbsp;Brake CT</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">&nbsp;{{ his.work_order.C_T_brake_type }}&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">&nbsp;{{ his.work_order.C_T_brake }}&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.brake_ct_serial_number }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ his.brake_ct_make }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Limit Switch</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Sl. No.</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Make</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Limit Switch</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Sl. No.</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">Make</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoisting</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.hoisting_limit_switch_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.hoisting_limit_switch_serial_number }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.hoisting_limit_switch_make }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;CT</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ ct_limit_switch_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ ct_limit_switch_serial_number }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ ct_limit_switch_make }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11"><h5><b>&nbsp;&nbsp;&nbsp;Control Panel & Pendent</b></h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Make</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;VFD</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Model</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">Type</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">Make</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Control Panel</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.control_panel_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.control_panel_make }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Hoisting VFD</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.hoist_vfd_model }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.hoist_vfd_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ his.hoist_vfd_make }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;Pendent</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.pendent_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.pendent_make }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;CT VFD</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.ct_vfd_model }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.ct_vfd_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ his.ct_vfd_make }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">&nbsp;</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">&nbsp;&nbsp;&nbsp;LT VFD</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.lt_vfd_model }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="1">{{ his.lt_vfd_type }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="1">{{ his.lt_vfd_make }}</td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border-top: 2px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11"><h5><b>&nbsp;&nbsp;&nbsp;Additional Information</b></h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11">&nbsp;&nbsp;&nbsp;{{ his.additional_information }}</td>
+            </tr>
+            <tr>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black;" rowspan="1" colspan="11"></td>
+            </tr>
+            <tr>
+              <td style="text-align: center; border: 0.5px solid grey; border-left: 2px solid black;" rowspan="1" colspan="2"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="3"></td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">{{ his.fitter_name }}</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">{{ his.engineer_in_charge }}</td>
+            </tr>
+            <tr>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-left: 2px solid black;" rowspan="1" colspan="2">Sales Rep</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="3">{{ his.work_order.sales_rep }}</td>
+              <td style="border: 0.5px solid grey;" rowspan="1" colspan="1"></td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black;" rowspan="1" colspan="2">Fitter's Name</td>
+              <td style="text-align: center; padding-top: 4px; border: 1.5px solid black; border-right: 2px solid black;" rowspan="1" colspan="3">Engg. In-charge</td>
+            </tr>
+            <tr>
+              <td style="border: 0.5px solid grey; border-left: 2px solid black; border-right: 2px solid black; border-bottom: 2px solid black;" rowspan="1" colspan="11">&nbsp;</td>
+            </tr>
+    </table>
+    <table>
+      <tr>
+        <td style="border-top:5px solid black; border-left: 5px solid black; border-right: 5px solid black; padding-top: 4px; padding-left: 4px; padding-right: 12px;">
+          <table>
+            <tr>
+              <td rowspan="1" colspan="8"><h1 style="color: #C47F00; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 900;">SIGMA CRANES AND HOISTS PRIVATE LIMITED</h1></td>
+              <td style="text-align: center;" rowspan="3" colspan="2"><b><h1 style="color: #C47F00; font-family: Arial, Helvetica, sans-serif; font-size: 40px; font-weight: 900;">SIGMA</h1></b></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 1px;" rowspan="1" colspan="7"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;"># 33/6, Kadabagere Cross, Near K.K.Schoo, Magadi Road, Bangalore 562130<br>Ph : 080 2853 5959, 2853 6375 | email: sigmahoistco@gmail.com</h5></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="6"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 12px; padding-right: 12px;">
+          <table border="1">
+            <tr>
+              <td style="padding-top: 4px; padding-left: 4px;" rowspan="1" colspan="7"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">{{ his.work_order.customer }}</h5></td>
+              <td style="text-align: center; padding-top: 4px;" rowspan="2" colspan="2"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">P.O. No.</h5></td>
+              <td style="text-align: center; padding-top: 4px;" rowspan="2" colspan="2"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">{{ his.work_order.P_O_Number }}<br>{{ his.work_order.P_O_Date }}</h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; padding-left: 4px;" rowspan="1" colspan="7"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">{{ his.work_order.customer.address }}</h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; padding-left: 4px;" rowspan="1" colspan="2"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">City</h5></td>
+              <td style="padding-top: 4px; padding-left: 4px;" rowspan="1" colspan="5"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">{{ his.work_order.customer.city }}</h5></td>
+              <td style="text-align: center; padding-top: 4px;" rowspan="2" colspan="2"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">Dispatch Date</h5></td>
+              <td style="text-align: center; padding-top: 4px;" rowspan="2" colspan="2"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">{{ his.dispatch_date }}</h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; padding-left: 4px;" rowspan="1" colspan="2"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">State</h5></td>
+              <td style="padding-top: 4px; padding-left: 4px;" rowspan="1" colspan="5"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">{{ his.work_order.customer.state }}</h5></td>
+            </tr>
+          </table><br><br><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; border-right: 5px solid black; border-left: 5px solid black;"><h1 style="color: #C47F00; font-family: Stencil; font-size: 36px; font-weight: 900;">TEST CERTIFICATE</h1></td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 12px; padding-right: 12px;">
+          <table border="1">
+            <tr>
+              <td style="padding-top: 4px; padding-left: 1px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">&nbsp;&nbsp;&nbsp;Serial Number of the Hoist</h5></td>
+              <td style="text-align: center; padding-top: 4px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">:</h5></td>
+              <td style="padding-top: 4px; padding-left: 1px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">&nbsp;&nbsp;&nbsp;{{ his.serial_number }}</h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; padding-left: 1px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">&nbsp;&nbsp;&nbsp;Safe Working Load (SWL) in Kg</h5></td>
+              <td style="text-align: center; padding-top: 4px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">:</h5></td>
+              <td style="padding-top: 4px; padding-left: 1px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">&nbsp;&nbsp;&nbsp;{{ his.work_order.capacity }}</h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; padding-left: 1px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">&nbsp;&nbsp;&nbsp;Proof of Load Applied*</h5></td>
+              <td style="text-align: center; padding-top: 4px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">:</h5></td>
+              <td style="padding-top: 4px; padding-left: 1px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">&nbsp;&nbsp;&nbsp;125% of SWL</h5></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 4px; padding-left: 1px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">&nbsp;&nbsp;&nbsp;Date of Test</h5></td>
+              <td style="text-align: center; padding-top: 4px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">:</h5></td>
+              <td style="padding-top: 4px; padding-left: 1px;"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;">&nbsp;&nbsp;&nbsp;{{ his.date_of_test }}</h5></td>
+            </tr>
+          </table><br><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 4px; padding-right: 4px;">
+          <br><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              We certify that the proof loading and subsequent examinations were conducted in accordance with the relevant Indian Standards Specifications.</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 4px; padding-right: 4px;">
+          <br><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 400;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+              *Note: For hoist capacities more than 15 tons, the hoist is tested for partial load.</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px;">
+          <br><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 400;">For Sigma Cranes & Hoists Pvt. Ltd.</h5><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px;">
+          <br><br><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 400;">Engineer - in - charge</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; border-bottom: 5px solid black">&nbsp;&nbsp;<br><br><br><br>&nbsp;<br><br><br><br><br>&nbsp;<br><br><br><br><br>&nbsp;</td>
+      </tr>
+    </table>
+    <table>
+      <tr>
+        <td style="border-top:5px solid black; border-left: 5px solid black; border-right: 5px solid black; padding-top: 4px; padding-left: 4px; padding-right: 12px;">
+          <table>
+            <tr>
+              <td rowspan="1" colspan="8"><h1 style="color: #C47F00; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 900;">SIGMA CRANES AND HOISTS PRIVATE LIMITED</h1></td>
+              <td style="text-align: center;" rowspan="3" colspan="2"><b><h1 style="color: #C47F00; font-family: Arial, Helvetica, sans-serif; font-size: 40px; font-weight: 900;">SIGMA</h1></b></td>
+            </tr>
+            <tr>
+              <td style="padding-top: 1px;" rowspan="1" colspan="7"><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 12px; font-weight: 200;"># 33/6, Kadabagere Cross, Near K.K.Schoo, Magadi Road, Bangalore 562130<br>Ph : 080 2853 5959, 2853 6375 | email: sigmahoistco@gmail.com</h5></td>
+            </tr>
+            <tr>
+              <td rowspan="1" colspan="6"></td>
+            </tr>
+          </table>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px;">
+          <h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 14px; font-weight: 400;">Customer : {{ his.work_order.customer }}</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px;">
+          <br><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 600;">Serial No : {{ his.serial_number }}</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; border-right: 5px solid black; border-left: 5px solid black; padding-top:8px;">
+          <h1 style="color: #C47F00; font-family: Stencil; font-size: 36px; font-weight: 900;">GUARANTEE CERTIFICATE</h1>
+        </td>
+      </tr>
+      <tr>
+        <td style="text-align: center; border-left: 5px solid black; border-right: 5px solid black; padding-top:1px;">
+          <h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 20px; font-weight: 600;">FOR <br> SIGMA ELECTRIC WIRE ROPE HOIST</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px; padding-top:12px;">
+          <h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 200;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            We certify that the proof loading and subsequent examinations were conducted in accordance with the relevant Indian Standards Specifications</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px; padding-top:8px;">
+          <h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 200;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            We hereby guarantee to replace any mechanical component if found defective due to bad workmanship or raw material fault free of cost Ex – Works Bangalore within the guarantee
+            period. The validity of this Guarantee is for a period of 12 Months from the date of supply of Hoist. However the guarantee is void if the equipment is misused, damaged during shipment &
+            electrical variations arising at the customer’s site. This guarantee is not covered for all electrical items</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px;">
+          <br><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 400;">For Sigma Cranes & Hoists Pvt. Ltd.</h5><br>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px;">
+          <br><br><h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 400;">Engineer - in - charge</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; padding-left: 8px; padding-right: 8px; padding-top:8px;">
+          <h5 style="color: #000; font-family: Arial, Helvetica, sans-serif; font-size: 16px; font-weight: 400;">Date - {{ his.date_of_test }}</h5>
+        </td>
+      </tr>
+      <tr>
+        <td style="border-left: 5px solid black; border-right: 5px solid black; border-bottom: 5px solid black">&nbsp;&nbsp;<br><br><br>&nbsp;<br><br><br><br><br>&nbsp;<br><br><br><br><br>&nbsp;<br><br><br>&nbsp;</td>
+      </tr>
+    </table>
+    </div>
+  </body>
+</html>
