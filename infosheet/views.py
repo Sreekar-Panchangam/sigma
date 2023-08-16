@@ -1,9 +1,13 @@
 from django.shortcuts import render, redirect
+from django.urls import reverse
 from django.http import HttpResponse
+from rest_framework.response import Response
+from rest_framework import status
 from rest_framework.views import APIView
 from django.db.models import Q
 from .models import HoistInformationSheet
 from workorder.models import HoistWorkOrder
+from .serializer import InformationSheetAddSerializer
 from django.template.loader import get_template
 from xhtml2pdf import pisa
 
@@ -47,13 +51,13 @@ class InformationSheetListView(APIView):
             'hiss': hiss,
         }
         return render(request, 'his_search_results.html', context)
-    
+
 class InformationSheetDetailView(APIView):
     def get(self, request, his):
         infosheet = HoistInformationSheet.objects.get(serial_number=his)
         context = {'his':infosheet}
         return render(request, 'his_detail.html', context)
-    
+
     def post(self, request, his):
         infosheet = HoistInformationSheet.objects.get(serial_number=his)
         slnum = infosheet.serial_number
@@ -69,3 +73,29 @@ class InformationSheetDetailView(APIView):
         if pisa_status.err:
             return HttpResponse('We had some errors <pre>' + html + '</pre>')
         return response
+
+class AddNewInformationSheetView(APIView):
+    def get(self, request):
+        sheets = HoistInformationSheet.objects.all()
+        hwos = HoistWorkOrder.objects.all().order_by('-Work_Order_Number')
+        context = {'sheets':sheets,'hwos':hwos}
+        return render(request, 'add_his.html', context)
+
+    def post(self, request, format=None):
+        data = request.data.copy()
+        tread = data['tread']
+        print(data)
+        hwo = HoistWorkOrder.objects.get(Work_Order_Number=int(data['work_order'].split()[-1]))
+        data['work_order'] = hwo.id
+        print(hwo)
+        hwo.tread = tread
+        hwo.save()
+        del data['tread']
+        print(data)
+        serializer = InformationSheetAddSerializer(data=data)
+        if serializer.is_valid():
+            instance = serializer.save()
+            his_id = instance.serial_number
+            detail_url = reverse('infosheet:his_detail', args=[his_id])
+            return redirect(detail_url)
+        return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)

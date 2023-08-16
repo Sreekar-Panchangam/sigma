@@ -1,0 +1,310 @@
+{% extends "base.html" %}
+{% block title %}
+    Hoist Information Sheet - Add
+{% endblock title %}
+{% block content %}
+    <div class="container">
+      <h1 class="h1-class-design">Add New Information Sheet</h1>
+      <form method="post">
+        {% csrf_token %}
+
+        <div class="sub-section">
+          <h5 class="h5-class-design">General Info</h5>
+          <table class="full-width-table">
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="work_order">Work Order Number:</label></td>
+            </tr>
+            <tr>
+              <td colspan="2">
+                <select class="input-style-medium" name="work_order">
+                    <option value="" disabled selected>--------------------------------------</option>
+                    {% for hwo in hwos %}
+                      <option value="{{ hwo }}">{{ hwo }}</option>
+                    {% endfor %}
+                </select>
+              </td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="serial_number">Serial Number:</label></td>
+              <td><label class="label-class-design" for="dispatch_date">Dispatch Date:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="serial_number" placeholder="Serial Number" required></td>
+              <td><input class="input-style" type="date" name="dispatch_date" required></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sub-section">
+          <h5 class="h5-class-design">Gear Box & Drum</h5>
+          <table class="full-width-table">
+            <tr>
+              <td><label class="label-class-design" for="gearbox_stages">Gear Box Stages:</label></td>
+              <td><label class="label-class-design" for="heat_treatment">Heat Treatment:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="gearbox_stages" placeholder="Gear Box Stages" required><br></td>
+              <td>
+                <select class="input-style" name="heat_treatment">
+                  <option value="" disabled selected>Heat Treatment</option>
+                  <option value="Soft Gears">Soft Gears</option>
+                  <option value="Hardened">Hardened</option>
+              </select>
+              <br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="rope_drum_dia">Rope Drum Dia:</label></td>
+              <td><label class="label-class-design" for="drum_length">Drum Length:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="rope_drum_dia" placeholder="Rope Drum Dia" required>  mm<br></td>
+              <td><input class="input-style" type="text" name="drum_length" placeholder="Drum Length" required>  mm<br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="drum_pitch">Drum Pitch:</label></td>
+              <td><label class="label-class-design" for="rope_guide_id">Rope Guide I D:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="drum_pitch" placeholder="Drum Pitch" required>  mm<br></td>
+              <td><input class="input-style" type="text" name="rope_guide_id" placeholder="Rope Guide I D" required>  mm<br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="guide_thread_depth">Guide Thread Depth:</label></td>
+              <td><label class="label-class-design" for="guide_thread_pitch">Guide Thread Pitch:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="guide_thread_depth" placeholder="Guide Thread Depth" required>  mm<br></td>
+              <td><input class="input-style" type="text" name="guide_thread_pitch" placeholder="Guide Thread Pitch" required>  mm<br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sub-section">
+          <h5 class="h5-class-design">Bottom Block & Idler</h5>
+          <table class="full-width-table">
+            <tr>
+              <td><label class="label-class-design" for="sheave_dia">Sheave Dia:</label></td>
+              <td><label class="label-class-design" for="idler_sheave_dia">Idler Sheave Dia:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="sheave_dia" placeholder="Sheave Dia">  mm<br></td>
+              <td><input class="input-style" type="text" name="idler_sheave_dia" placeholder="Idler Sheave Dia">  mm<br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="no_of_sheaves">Number of Sheaves:</label></td>
+              <td><label class="label-class-design" for="no_of_idler">Number of Idler Sheaves:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="no_of_sheaves" placeholder="Number of Sheaves">  No(s)<br></td>
+              <td><input class="input-style" type="text" name="no_of_idler" placeholder="Number of Idler Sheaves">  No(s)<br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="sheave_covers">Sheave Covers:</label></td>
+              <td><label class="label-class-design" for="hook_type">Hook Type:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="sheave_covers" placeholder="Sheave Covers">  Set<br></td>
+              <td><input class="input-style" type="text" name="hook_type" placeholder="Hook Type"><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sub-section">
+          <h5 class="h5-class-design">Cross Traverse & Trolley</h5>
+          <table class="full-width-table">
+            <tr>
+              <td><label class="label-class-design" for="tread">C T Wheel Tread:</label></td>
+              <td><label class="label-class-design" for="no_of_gear_box">Number of Gear Box:</label></td>
+            </tr>
+            <tr>
+              <td>
+                <select class="input-style" name="tread">
+                    <option value="" disabled selected>Tread</option>
+                    <option value="Flat">Flat</option>
+                    <option value="Taper">Taper</option>
+                    <option value="Special">Special</option>
+                </select>
+              <br></td>
+              <td><input class="input-style" type="text" name="no_of_gear_box" placeholder="Number of Gear Box">  No(s)<br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sub-section">
+          <h5 class="h5-class-design">Electricals</h5>
+          <table class="full-width-table">
+            <tr>
+              <td><label class="label-class-design" for="motor_mh_serial_number">Motor MH:</label><label class="label-class-design" for="motor_mh_make"></label></td>
+              <td><label class="label-class-design" for="brake_mh_serial_number">Brake MH:</label><label class="label-class-design" for="brake_mh_make"></label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style-small" type="text" name="motor_mh_serial_number" placeholder="Serial Number" required><input class="input-style-small" type="text" name="motor_mh_make" placeholder="Make" required><br></td>
+              <td><input class="input-style-small" type="text" name="brake_mh_serial_number" placeholder="Serial Number" required><input class="input-style-small" type="text" name="brake_mh_make" placeholder="Make" required><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="motor_ct_serial_number">Motor CT:</label><label class="label-class-design" for="motor_ct_make"></label></td>
+              <td><label class="label-class-design" for="brake_ct_serial_number">Brake CT:</label><label class="label-class-design" for="brake_ct_make"></label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style-small" type="text" name="motor_ct_serial_number" placeholder="Serial Number" required><input class="input-style-small" type="text" name="motor_ct_make" placeholder="Make" required><br></td>
+              <td><input class="input-style-small" type="text" name="brake_ct_serial_number" placeholder="Serial Number" required><input class="input-style-small" type="text" name="brake_ct_make" placeholder="Make" required><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="hoisting_limit_switch_type">Hoisting Limit Switch:</label><label class="label-class-design" for="hoisting_limit_switch_serial_number"></label><label class="label-class-design" for="hoisting_limit_switch_make"></label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="hoisting_limit_switch_type" placeholder="Type">
+                <input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="hoisting_limit_switch_serial_number" placeholder="Serial Number">
+                <input style="width: 320px;" class="input-style-small" type="text" name="hoisting_limit_switch_make" placeholder="Make"></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="ct_limit_switch_type">C T Limit Switch:</label><label class="label-class-design" for="ct_limit_switch_serial_number"></label><label class="label-class-design" for="ct_limit_switch_make"></label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="ct_limit_switch_type" placeholder="Type">
+                <input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="ct_limit_switch_serial_number" placeholder="Serial Number">
+                <input style="width: 320px;" class="input-style-small" type="text" name="ct_limit_switch_make" placeholder="Make"></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sub-section">
+          <h5 class="h5-class-design">Control Panel & Pendent</h5>
+          <table class="full-width-table">
+            <tr>
+              <td><label class="label-class-design" for="control_panel_type">Control Panel:</label><label class="label-class-design" for="control_panel_make"></label></td>
+              <td><label class="label-class-design" for="pendent_type">Pendent:</label><label class="label-class-design" for="pendent_make"></label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style-small" type="text" name="control_panel_type" placeholder="Type"><input class="input-style-small" type="text" name="control_panel_make" placeholder="Make"><br></td>
+              <td><input class="input-style-small" type="text" name="pendent_type" placeholder="Type"><input class="input-style-small" type="text" name="pendent_make" placeholder="Make"><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="hoist_vfd_model">Hoisting VFD:</label><label class="label-class-design" for="hoist_vfd_type"></label><label class="label-class-design" for="hoist_vfd_make"></label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="hoist_vfd_model" placeholder="Model">
+                <input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="hoist_vfd_type" placeholder="Type">
+                <input style="width: 320px;" class="input-style-small" type="text" name="hoist_vfd_make" placeholder="Make"></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="ct_vfd_model">C T VFD:</label><label class="label-class-design" for="ct_vfd_type"></label><label class="label-class-design" for="ct_vfd_make"></label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="ct_vfd_model" placeholder="Model">
+                <input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="ct_vfd_type" placeholder="Type">
+                <input style="width: 320px;" class="input-style-small" type="text" name="ct_vfd_make" placeholder="Make"></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="lt_vfd_model">L T VFD:</label><label class="label-class-design" for="lt_vfd_type"></label><label class="label-class-design" for="lt_vfd_make"></label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="lt_vfd_model" placeholder="Model">
+                <input style="width: 320px; margin-right: 17px;" class="input-style-small" type="text" name="lt_vfd_type" placeholder="Type">
+                <input style="width: 320px;" class="input-style-small" type="text" name="lt_vfd_make" placeholder="Make"></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sub-section">
+          <h5 class="h5-class-design">Additional Information</h5>
+          <table class="full-width-table">
+            <tr>
+              <td colspan="2"><label class="label-class-design" for="additional_information">Information:</label></td>
+            </tr>
+            <tr>
+              <td colspan="2"><input class="input-style-medium" type="text" name="additional_information" placeholder="Information"><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+            <tr>
+              <td><label class="label-class-design" for="fitter_name">Fitter's Name:</label></td>
+              <td><label class="label-class-design" for="engineer_in_charge">Engineer In-charge:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="fitter_name" placeholder="Fitter's Name"><br></td>
+              <td><input class="input-style" type="text" name="engineer_in_charge" placeholder="Engineer In-charge"><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+
+        <div class="sub-section">
+          <h5 class="h5-class-design">Test Certificate</h5>
+          <table class="full-width-table">
+            <tr>
+              <td><label class="label-class-design" for="proof_of_load_applied">Proof of Load Applied:</label></td>
+              <td><label class="label-class-design" for="date_of_test">Date of Test:</label></td>
+            </tr>
+            <tr>
+              <td><input class="input-style" type="text" name="proof_of_load_applied" value="125% of SWL"><br></td>
+              <td><input class="input-style" type="date" name="date_of_test" placeholder="Date of Test"><br></td>
+            </tr>
+            <tr>
+              <td colspan="2">&nbsp;</td>
+            </tr>
+          </table>
+        </div>
+
+        <input type="submit" value="Submit" class="btn btn-primary button-class-design">
+    </form>
+    </div>
+
+{% endblock content %}

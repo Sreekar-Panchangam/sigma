@@ -9,7 +9,7 @@ class HoistInformationSheet(models.Model):
     # General Information
     serial_number = models.CharField(max_length=100, unique=True)
     dispatch_date = models.DateField()
-    
+
     # Gear Box & Drum
     gearbox_stages = models.CharField(max_length=100)
     heat_treatment = models.CharField(max_length=20, choices=[('Soft Gears', 'Soft Gears'), ('Hardened', 'Hardened')])
@@ -40,12 +40,12 @@ class HoistInformationSheet(models.Model):
     brake_ct_make = models.CharField(max_length=100)
 
     # Limit Switch Information
-    hoisting_limit_switch_type = models.CharField(max_length=100)
-    hoisting_limit_switch_serial_number = models.CharField(max_length=100)
-    hoisting_limit_switch_make = models.CharField(max_length=100)
-    ct_limit_switch_type = models.CharField(max_length=100)
-    ct_limit_switch_serial_number = models.CharField(max_length=100)
-    ct_limit_switch_make = models.CharField(max_length=100)
+    hoisting_limit_switch_type = models.CharField(max_length=100, blank=True, null=True)
+    hoisting_limit_switch_serial_number = models.CharField(max_length=100, blank=True, null=True)
+    hoisting_limit_switch_make = models.CharField(max_length=100, blank=True, null=True)
+    ct_limit_switch_type = models.CharField(max_length=100, blank=True, null=True)
+    ct_limit_switch_serial_number = models.CharField(max_length=100, blank=True, null=True)
+    ct_limit_switch_make = models.CharField(max_length=100, blank=True, null=True)
 
     # Control Panel & Pendent
     control_panel_type = models.CharField(max_length=100, blank=True, null=True)
@@ -70,6 +70,7 @@ class HoistInformationSheet(models.Model):
     engineer_in_charge = models.CharField(max_length=100)
 
     # Test Certificate
+    proof_of_load_applied = models.CharField(max_length=100, blank=True, null=True)
     date_of_test = models.DateField(blank=True, null=True)
 
     def __str__(self):

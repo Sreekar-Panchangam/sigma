@@ -4,8 +4,8 @@
 {% endblock title %}
 {% block content %}
 <div class="container">
-    <h1 class="h1-class-design">Detail Page</h1><br>
-    <div class="centre-table">
+  <h1 class="h1-class-design">Detail Page</h1><br>
+  <div class="centre-table">
     <table border="5">
             <tr>
               <td rowspan="1" colspan="2" class="centered-cell cell-border-all"><h1 class="table-h1-text-design">SIGMA</h1></td>
@@ -347,9 +347,9 @@
             </tr>
     </table><br>
   </div>
-    <form method="POST">
-        {% csrf_token %}
-        <button class="button-class-design centre-button" type="submit">Save as PDF</button>
-    </form>
+  <form method="POST">
+      {% csrf_token %}
+      <button class="button-class-design centre-button" type="submit">Save as PDF</button>
+  </form>
 </div>
 {% endblock content %}
