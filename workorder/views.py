@@ -3,7 +3,9 @@ from django.http import HttpResponse
 from rest_framework.response import Response
 from rest_framework import status
 from django.urls import reverse
+from django.views import View
 from rest_framework.views import APIView
+import pandas as pd
 from django.db.models import Q
 import pdfkit
 from django.template.loader import get_template
@@ -20,7 +22,7 @@ class HoistWorkOrderListView(APIView):
 
     def post(self, request):
         wonumber = request.data.get('wonumber')
-        customer = request.data.get('customer')
+        customer = request.data.get('companyName')
         city = request.data.get('city')
         capacity = request.data.get('capacity')
         sales_rep = request.data.get('sales_rep')
@@ -181,3 +183,106 @@ class AddNewCustomerView(APIView):
             detail_url = reverse('workorder:add_hwo')
             return redirect(detail_url)
         return Response(serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+class UploadExcelView(View):
+    template_name = 'upload_excel.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
+
+    def post(self, request):
+        if 'excel_file' in request.FILES:
+            excel_file = request.FILES['excel_file']
+            df = pd.read_excel(excel_file)
+
+            for index, row in df.iterrows():
+                customer_name = row['Customer Name']
+                existing_customer = Customer.objects.filter(name=customer_name).exists()
+                if not existing_customer:
+                    customer = Customer(
+                        title=row['Customer Title'],
+                        name=customer_name,
+                        address=row['Address'],
+                        city=row['City'],
+                        state=row['State'],
+                        contact_person=row['Contact Person'],
+                        phone=row['Phone Number'],
+                        email=row['Email'],
+                        gstin=row['GSTIN'],
+                        website=row['Website']
+                    )
+                    customer.save()
+
+            for index, row in df.iterrows():
+                work_order_number = row['Work Order Number']
+                existing_work_order = HoistWorkOrder.objects.filter(Work_Order_Number=work_order_number).exists()
+                if not existing_work_order:
+                    customer_name = row['Customer Name']
+                    customer = Customer.objects.get(name=customer_name)
+
+                    hoist_work_order = HoistWorkOrder(
+                        Work_Order_Number=work_order_number,
+                        date=row['Date'],
+                        customer=customer,
+                        P_O_Number=row['P O Number'],
+                        P_O_Date=row['P O Date'],
+                        delivery_date=row['Delivery Date'],
+                        hoist_size=row['Hoist Size'],
+                        quantity=row['Quantity'],
+                        capacity=row['Capacity'],
+                        height=row['Height'],
+                        fall=row['Fall'],
+                        hoist_code=row['Hoist Code'],
+                        trolley_type=row['Trolley Type'],
+                        additional_feature=row['Additional Feature'],
+                        hoist_speed=row['Hoist Speed'],
+                        hoist_motor=row['Hoist Motor'],
+                        hoist_motor_rpm=row['Hoist Motor RPM'],
+                        hoist_brake=row['Hoist Brake'],
+                        hoist_brake_type=row['Hoist Brake Type'],
+                        rope_drum_code=row['Rope Drum Code'],
+                        rope_reeving=row['Rope Reeving'],
+                        wire_rope=row['Wire Rope'],
+                        wire_length=row['Wire Length'],
+                        C_T_wheel=row['C T Wheel'],
+                        tread=row['Tread'],
+                        C_T_wheel_type=row['C T Wheel Type'],
+                        C_T_wheel_type_2=row['Wheel Type'],
+                        C_T_speed=row['C T Speed'],
+                        C_T_gear_box=row['C T Gear Box'],
+                        C_T_motor=row['C T Motor'],
+                        C_T_motor_rpm=row['C T Motor RPM'],
+                        C_T_brake=row['C T Brake'],
+                        C_T_brake_type=row['C T Brake Type'],
+                        gravity_type=row['Gravity Type'],
+                        C_T_limit_switch=row['C T Limit Switch'],
+                        L_T_limit_switch=row['L T Limit Switch'],
+                        hoist_creep=row['Hoist Creep'],
+                        C_T_creep=row['C T Creep'],
+                        L_T_creep=row['L T Creep'],
+                        flange_width=row['Flange Width'],
+                        outdoor_cover=row['Outdoor Cover'],
+                        notes_1=row['Note 1'],
+                        notes_2=row['Note 2'],
+                        notes_3=row['Note 3'],
+                        notes_4=row['Note 4'],
+                        notes_5=row['Note 5'],
+                        notes_6=row['Note 6'],
+                        notes_7=row['Note 7'],
+                        notes_8=row['Note 8'],
+                        packing=row['Packing'],
+                        sales_rep=row['Sales Rep'],
+                        transportation=row['Transportation'],
+                        issued_to=row['Issued To']
+                    )
+                    hoist_work_order.save()
+
+            return redirect('workorder:add_success')
+
+        return render(request, self.template_name, {'error': 'No file uploaded'})
+
+class UploadExcelSuccessView(View):
+    template_name = 'added_excel.html'
+
+    def get(self, request):
+        return render(request, self.template_name)
